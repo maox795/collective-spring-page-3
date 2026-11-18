@@ -1,0 +1,145 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>A Recipe for Spring</title>
+  <link rel="stylesheet" href="Camille-styles.css">
+</head>
+
+<body>
+
+  <header>
+   
+
+    <nav>
+      <a href="homepage.html">Homepage</a>
+      <a href="Camille page 1.html">01 / FLAVORS</a>
+      <a href="Camille page 2.html">02 / RECIPE</a>
+    </nav>
+
+    <p class="issue">SPRING</p>
+  </header>
+
+  <main>
+
+    <section class="page-intro recipe-intro">
+
+      <p class="label">CHAPTER 02 / MY SPRING MENU</p>
+
+      <h1>A RECIPE<br>FOR <i>SPRING.</i></h1>
+
+      <p>
+        If spring was a drink or dessert,
+        what would it taste like?
+        I would mix my four favorite spring flavors together.
+      </p>
+
+      <img src="Camille-flower-tea.png" class="intro-image" alt="Flower tea">
+
+      
+    </section>
+
+    <section class="recipe-section">
+
+      <p class="label">MY IMAGINARY SPRING MENU</p>
+
+      <h2>FOUR LITTLE<br><i>INGREDIENTS.</i></h2>
+
+      <p class="recipe-description">
+        No exact measurements. Just a little sweetness,
+        something sour, something green, and flowers.
+      </p>
+
+      <div class="recipe-grid">
+
+        <div class="recipe-item">
+          <p>01 / SOMETHING SWEET</p>
+          <img src="Camille-strawberry.png" alt="Strawberry">
+          <h3>STRAWBERRY</h3>
+          <p>For a sweet and juicy beginning.</p>
+        </div>
+
+        <div class="recipe-item">
+          <p>02 / SOMETHING BRIGHT</p>
+          <img src="Camille-lemon.svg" alt="Lemon">
+          <h3>LEMON</h3>
+          <p>For a little sour and refreshing taste.</p>
+        </div>
+
+        <div class="recipe-item">
+          <p>03 / SOMETHING GREEN</p>
+          <img src="Camille-matcha.svg" alt="Matcha">
+          <h3>MATCHA</h3>
+          <p>For a fresh and earthy feeling.</p>
+        </div>
+
+        <div class="recipe-item">
+          <p>04 / SOMETHING SOFT</p>
+          <img src="Camille-flower-tea.png" alt="Flower tea">
+          <h3>FLOWER TEA</h3>
+          <p>For a delicate and floral finish.</p>
+        </div>
+
+      </div>
+
+    </section>
+
+    <section class="ending">
+
+      <p class="label">THE LAST </p>
+
+      <h2>MAYBE SPRING<br>
+      TASTES DIFFERENT<br>
+      TO <i>EVERYONE.</i></h2>
+
+      <p>
+        What does spring taste like to you?
+        Maybe it's your favorite fruit,
+        a drink.
+      </p>
+
+      <a href="homepage.html" class="enter">Homepage ↗</a>
+
+    </section>
+
+
+<section class="interactive">
+  <h2>A LITTLE SPRING MESSAGE</h2>
+
+  <p id="springMessage">
+    Click the button for a spring message.
+  </p>
+
+  <button onclick="newMessage()">
+    SURPRISE 
+  </button>
+</section>
+
+<script>
+  let messages = [
+    "Spring is a fresh start.",
+    "Enjoy the little things.",
+    "Flowers make everything better.",
+    "Today feels like spring."
+  ];
+
+  function newMessage() {
+    let number = Math.floor(Math.random() * messages.length);
+
+    document.getElementById("springMessage").textContent =
+      messages[number];
+  }
+</script>
+
+
+  </main>
+
+  <footer>
+    <a href="homepage.html">Homepage</a>
+    
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Scent of Spring</title><link rel="stylesheet" href="Cici-style.css"></head><body>
+<nav><h2>Senses of Spring</h2><div><a href="homepage.html">Homepage</a><a href="Cici page 1.html">Ingredients</a><a href="Cici page 2.html">Perfumes</a></div></nav>
+<section id="ingredients" class="ingredients">
+
+    <p class="small-title">PAGE 02 — THE INGREDIENT GARDEN</p>
+
+    <h2>What Does Spring Smell Like?</h2>
+
+    <p class="description">
+        Welcome to the ingredient garden! Click on a flower or fruit to discover its scent.
+    </p>
+
+    <div class="ingredient-grid">
+
+        <button onclick="showIngredient('Peony', 'A soft, romantic floral scent. Featured in Dior Blooming Bouquet and Maison Margiela Springtime in a Park.')">
+            <span>🌸</span>
+            <h3>Peony</h3>
+            <p>Soft & Floral</p>
+        </button>
+
+        <button onclick="showIngredient('Pear', 'A juicy, fresh and slightly sweet fruity scent. Featured in Maison Margiela Springtime in a Park.')">
+            <span>🍐</span>
+            <h3>Pear</h3>
+            <p>Fresh & Fruity</p>
+        </button>
+
+        <button onclick="showIngredient('Grapefruit', 'A bright citrus scent with a fresh and slightly bitter character. Featured in Hermès Un Jardin sur le Nil.')">
+            <span>🍊</span>
+            <h3>Grapefruit</h3>
+            <p>Fresh & Citrus</p>
+        </button>
+
+        <button onclick="showIngredient('Jasmine', 'A sweet and delicate white floral scent that brings a soft garden feeling.')">
+            <span>🌼</span>
+            <h3>Jasmine</h3>
+            <p>Sweet & Floral</p>
+        </button>
+
+        <button onclick="showIngredient('Rose', 'A classic floral scent that feels romantic, fresh and elegant. Featured in Dior and Maison Margiela.')">
+            <span>🌹</span>
+            <h3>Rose</h3>
+            <p>Romantic & Floral</p>
+        </button>
+
+        <button onclick="showIngredient('Green Mango', 'A juicy green fruity note with a fresh and slightly tart character. Featured in Hermès Un Jardin sur le Nil.')">
+            <span>🥭</span>
+            <h3>Green Mango</h3>
+            <p>Green & Fruity</p>
+        </button>
+
+    </div>
+
+    <div id="ingredient-info" class="info-box">
+        <h3>Your Spring Ingredient</h3>
+        <p>Choose an ingredient above to discover its fragrance.</p>
+    </div>
+
+    <a href="Cici page 2.html" class="main-button">
+        Next: Discover the Perfumes →
+    </a>
+
+</section>
+<footer><p>Spring can be a memory</p></footer>
+<script>
+
+function showIngredient(name, description) {
+
+    document.getElementById("ingredient-info").innerHTML =
+        "<h3>" + name + "</h3>" +
+        "<p>" + description + "</p>";
+
+}
+
+function showPerfume(name, notes, description) {
+
+    document.getElementById("perfume-info").innerHTML =
+        "<h3>" + name + "</h3>" +
+        "<p><strong>Main Notes:</strong> " + notes + "</p>" +
+        "<p>" + description + "</p>";
+
+}
+
+function showStage(stage) {
+
+    let title = "";
+    let subtitle = "";
+    let description = "";
+    let ingredients = "";
+    let time = "";
+    let number = "";
+
+    if (stage === "top") {
+
+        title = "Top Notes";
+        subtitle = "The First Impression";
+        description = "The first scent you notice after spraying a perfume. Fresh, bright, and light, these notes create the opening impression.";
+        ingredients = "<span>🍐 Pear</span><span>🍊 Citrus</span><span>🌿 Green Leaves</span>";
+        time = "Usually noticeable for the first few minutes.";
+        number = "01 / 03";
+
+    } else if (stage === "heart") {
+
+        title = "Heart Notes";
+        subtitle = "The Heart of the Fragrance";
+        description = "As the first notes fade, the heart of the fragrance begins to bloom. Floral scents often create the main character of a spring perfume.";
+        ingredients = "<span>🌸 Peony</span><span>🌹 Rose</span><span>🌼 Jasmine</span>";
+        time = "Usually develops after the opening and lasts for several hours.";
+        number = "02 / 03";
+
+    } else if (stage === "base") {
+
+        title = "Base Notes";
+        subtitle = "The Lasting Memory";
+        description = "The final layer of a fragrance. These deeper and softer scents stay on the skin longer and give the perfume its lasting impression.";
+        ingredients = "<span>🤍 White Musk</span><span>🌳 Woods</span><span>🍦 Vanilla</span>";
+        time = "Can remain noticeable for several hours.";
+        number = "03 / 03";
+
+    }
+
+    document.getElementById("stage-info").innerHTML =
+        '<div class="stage-number">' + number + '</div>' +
+        '<h3>' + title + '</h3>' +
+        '<p class="stage-subtitle">' + subtitle + '</p>' +
+        '<p class="stage-description">' + description + '</p>' +
+        '<div class="scent-ingredients">' + ingredients + '</div>' +
+        '<p class="stage-time">' + time + '</p>';
+
+    let buttons = document.querySelectorAll(".stage-buttons button");
+
+    buttons.forEach(function(button) {
+        button.classList.remove("active");
+    });
+
+    if (stage === "top") {
+        buttons[0].classList.add("active");
+    } else if (stage === "heart") {
+        buttons[1].classList.add("active");
+    } else {
+        buttons[2].classList.add("active");
+    }
+
+    document.querySelectorAll(".timeline-item").forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    document.getElementById(stage + "-line").classList.add("active");
+
+}
+
+</script>
+</body></html>

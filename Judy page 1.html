@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Does Spring Look Like?</title>
+
+  
+<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "DM Sans", Arial, sans-serif;
+  overflow: hidden;
+}
+
+input {
+  display: none;
+}
+
+.scene {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #263329;
+}
+
+.photo {
+  display: none;
+  position: absolute;
+  inset: 0;
+  background-position: center;
+  background-size: cover;
+}
+
+.photo::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.12);
+}
+
+#one:checked ~ .scene .photo-one,
+#two:checked ~ .scene .photo-two,
+#three:checked ~ .scene .photo-three,
+#four:checked ~ .scene .photo-four {
+  display: block;
+}
+
+.click-area {
+  display: none;
+  position: absolute;
+  inset: 0;
+  cursor: pointer;
+  z-index: 1;
+}
+
+#one:checked ~ .scene .click-one,
+#two:checked ~ .scene .click-two,
+#three:checked ~ .scene .click-three,
+#four:checked ~ .scene .click-four {
+  display: block;
+}
+
+.center-button {
+  position: absolute;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: min(68vw, 680px);
+  min-height: 150px;
+  padding: 28px 38px;
+  border: 2px solid rgba(255,249,242,.95);
+  border-radius: 100px;
+  color: #263329;
+  background: rgba(255,249,242,.82);
+  font-family: "Fraunces", Georgia, serif;
+  font-size: clamp(34px, 5vw, 64px);
+  line-height: 1.05;
+  font-weight: 700;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.center-button label {
+  display: none;
+  cursor: pointer;
+}
+
+#one:checked ~ .scene .title-one,
+#two:checked ~ .scene .title-two,
+#three:checked ~ .scene .title-three,
+#four:checked ~ .scene .title-four {
+  display: flex;
+}
+
+.home-link, .bottom-link {
+  position: absolute;
+  z-index: 3;
+  bottom: 24px;
+  padding: 10px 20px;
+  border: 1px solid rgba(255,249,242,.9);
+  border-radius: 999px;
+  color: #fff9f2;
+  background: rgba(0,0,0,.28);
+  font-size: 16px;
+  text-decoration: none;
+}
+
+.home-link {
+  left: 24px;
+}
+
+.bottom-link {
+  left: 50%;
+  transform: translateX(-50%);
+}
+</style>
+</head>
+
+<body>
+
+<input type="radio" name="scene" id="one" checked>
+<input type="radio" name="scene" id="two">
+<input type="radio" name="scene" id="three">
+<input type="radio" name="scene" id="four">
+
+<main class="scene">
+
+  <div class="photo photo-one" style="background-image:url('bloomingflowers.jpg')"></div>
+  <div class="photo photo-two" style="background-image:url('freshgreenleaves.jpg')"></div>
+  <div class="photo photo-three" style="background-image:url('brightsunlight.jpg')"></div>
+  <div class="photo photo-four" style="background-image:url('colorfulnature.jpg')"></div>
+
+  <label class="click-area click-one" for="two"></label>
+  <label class="click-area click-two" for="three"></label>
+  <label class="click-area click-three" for="four"></label>
+  <label class="click-area click-four" for="one"></label>
+
+  <div class="center-button">
+    <label class="title-one" for="two">Blooming Flowers</label>
+    <label class="title-two" for="three">Fresh Green Leaves</label>
+    <label class="title-three" for="four">Brighter Sunlight</label>
+    <label class="title-four" for="one">Colorful Nature</label>
+  </div>
+
+  <a class="home-link" href="homepage.html">Homepage</a>
+  <a class="bottom-link" href="Judy page 2.html">What does spring look like?</a>
+
+</main>
+</body>
+</html>

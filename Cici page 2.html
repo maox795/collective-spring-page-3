@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>The Scent of Spring</title><link rel="stylesheet" href="Cici-style.css"></head><body>
+<nav><h2>Senses of Spring</h2><div><a href="homepage.html">Homepage</a><a href="Cici page 1.html">Ingredients</a><a href="Cici page 2.html">Perfumes</a></div></nav>
+<section id="perfumes" class="perfumes">
+
+    <p class="small-title">PAGE 03 — THE PERFUME COLLECTION</p>
+
+    <h2>Three Ways to Smell Spring</h2>
+
+    <p class="description">
+        Choose one to explore its fragrance.
+    </p>
+
+    <div class="perfume-grid">
+
+        <button class="perfume-card" onclick="showPerfume('Dior Blooming Bouquet', 'Bergamot, Peony, Rose and White Musk', 'A delicate floral bouquet that feels like walking through a garden full of blooming flowers.')">
+
+            <img src="dior.jpg" alt="Dior Blooming Bouquet">
+
+            <h3>Dior</h3>
+            <p>Blooming Bouquet</p>
+
+            <span>Discover →</span>
+
+        </button>
+
+        <button class="perfume-card" onclick="showPerfume('Hermès Un Jardin sur le Nil', 'Green Mango, Grapefruit, Lotus and Green Notes', 'A fresh and green fragrance inspired by a garden along the Nile River.')">
+
+            <img src="Hermes_Un-Jardin-Sur-Le-Nil-1.webp" alt="Hermes perfume">
+
+            <h3>Hermès</h3>
+            <p>Un Jardin sur le Nil</p>
+
+            <span>Discover →</span>
+
+        </button>
+
+        <button class="perfume-card" onclick="showPerfume('Maison Margiela Springtime in a Park', 'Pear, Rose, Peony and Musk', 'A soft and fruity fragrance that captures the feeling of a sunny spring afternoon in the park.')">
+
+            <img src="maison.jpeg" alt="Maison Margiela perfume">
+
+            <h3>Maison Margiela</h3>
+            <p>Springtime in a Park</p>
+
+            <span>Discover →</span>
+
+        </button>
+
+    </div>
+
+    <div id="perfume-info" class="info-box">
+
+        <h3>Choose Your Perfume</h3>
+
+        <p>Click on a perfume to discover its notes and story.</p>
+
+    </div>
+
+    <div class="journey">
+
+        <p class="small-title">THE LIFE OF A FRAGRANCE</p>
+
+        <h2>Follow the Scent</h2>
+
+        <p>Perfume has three stages of smell</p>
+
+        <div class="scent-timeline">
+
+            <div class="timeline-item active" id="top-line">
+                <span>01</span>
+                <p>First Impression</p>
+            </div>
+
+            <div class="timeline-item" id="heart-line">
+                <span>02</span>
+                <p>The Heart</p>
+            </div>
+
+            <div class="timeline-item" id="base-line">
+                <span>03</span>
+                <p>Lasting Memory</p>
+            </div>
+
+        </div>
+
+        <div class="stage-buttons">
+
+            <button class="active" onclick="showStage('top')">
+                Top Notes
+            </button>
+
+            <button onclick="showStage('heart')">
+                Heart Notes
+            </button>
+
+            <button onclick="showStage('base')">
+                Base Notes
+            </button>
+
+        </div>
+
+        <div id="stage-info" class="stage-card">
+
+            <div class="stage-number">01 / 03</div>
+
+            <h3>Top Notes</h3>
+
+            <p class="stage-subtitle">The First Impression</p>
+
+            <p class="stage-description">
+                The first scent you notice after spraying a perfume. Fresh, bright, and light, these notes create the opening impression.
+            </p>
+
+            <div class="scent-ingredients">
+                <span>🍐 Pear</span>
+                <span>🍊 Citrus</span>
+                <span>🌿 Green Leaves</span>
+            </div>
+
+            <p class="stage-time">Usually noticeable for the first few minutes.</p>
+
+        </div>
+
+    </div>
+
+    <a href="homepage.html" class="main-button">
+        Homepage ↑
+    </a>
+
+</section>
+<footer><p>Spring can be a memory</p></footer>
+<script>
+
+function showIngredient(name, description) {
+
+    document.getElementById("ingredient-info").innerHTML =
+        "<h3>" + name + "</h3>" +
+        "<p>" + description + "</p>";
+
+}
+
+function showPerfume(name, notes, description) {
+
+    document.getElementById("perfume-info").innerHTML =
+        "<h3>" + name + "</h3>" +
+        "<p><strong>Main Notes:</strong> " + notes + "</p>" +
+        "<p>" + description + "</p>";
+
+}
+
+function showStage(stage) {
+
+    let title = "";
+    let subtitle = "";
+    let description = "";
+    let ingredients = "";
+    let time = "";
+    let number = "";
+
+    if (stage === "top") {
+
+        title = "Top Notes";
+        subtitle = "The First Impression";
+        description = "The first scent you notice after spraying a perfume. Fresh, bright, and light, these notes create the opening impression.";
+        ingredients = "<span>🍐 Pear</span><span>🍊 Citrus</span><span>🌿 Green Leaves</span>";
+        time = "Usually noticeable for the first few minutes.";
+        number = "01 / 03";
+
+    } else if (stage === "heart") {
+
+        title = "Heart Notes";
+        subtitle = "The Heart of the Fragrance";
+        description = "As the first notes fade, the heart of the fragrance begins to bloom. Floral scents often create the main character of a spring perfume.";
+        ingredients = "<span>🌸 Peony</span><span>🌹 Rose</span><span>🌼 Jasmine</span>";
+        time = "Usually develops after the opening and lasts for several hours.";
+        number = "02 / 03";
+
+    } else if (stage === "base") {
+
+        title = "Base Notes";
+        subtitle = "The Lasting Memory";
+        description = "The final layer of a fragrance. These deeper and softer scents stay on the skin longer and give the perfume its lasting impression.";
+        ingredients = "<span>🤍 White Musk</span><span>🌳 Woods</span><span>🍦 Vanilla</span>";
+        time = "Can remain noticeable for several hours.";
+        number = "03 / 03";
+
+    }
+
+    document.getElementById("stage-info").innerHTML =
+        '<div class="stage-number">' + number + '</div>' +
+        '<h3>' + title + '</h3>' +
+        '<p class="stage-subtitle">' + subtitle + '</p>' +
+        '<p class="stage-description">' + description + '</p>' +
+        '<div class="scent-ingredients">' + ingredients + '</div>' +
+        '<p class="stage-time">' + time + '</p>';
+
+    let buttons = document.querySelectorAll(".stage-buttons button");
+
+    buttons.forEach(function(button) {
+        button.classList.remove("active");
+    });
+
+    if (stage === "top") {
+        buttons[0].classList.add("active");
+    } else if (stage === "heart") {
+        buttons[1].classList.add("active");
+    } else {
+        buttons[2].classList.add("active");
+    }
+
+    document.querySelectorAll(".timeline-item").forEach(function(item) {
+        item.classList.remove("active");
+    });
+
+    document.getElementById(stage + "-line").classList.add("active");
+
+}
+
+</script>
+</body></html>
